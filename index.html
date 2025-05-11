@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eksperimenti i Lekundjes Fizike</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="experiment-selection">
+        <h1>Demonstrimi i lekundjeve te trupave ne lengun joviskoz</h1>
+        <div class="button-container">
+          <button id="exp1-btn" class="exp-btn">Cilindri ne leng</button>
+          <button id="exp2-btn" class="exp-btn">
+            Blloqet kubike simetrike ne leng
+          </button>
+        </div>
+      </div>
+
+      <div id="experiment-container" class="hidden">
+        <div class="header">
+          <div id="control-panel">
+            <h3>Paneli i Kontrollit</h3>
+            <div id="exp1-controls" class="hidden">
+              <div class="control-group">
+                <label for="density-ratio">Raporti i Densitetit (ρ₁/ρ₂):</label>
+                <input
+                  type="range"
+                  id="density-ratio"
+                  min="0.1"
+                  max="0.9"
+                  step="0.1"
+                  value="0.5"
+                />
+                <span id="density-ratio-value">0.5</span>
+              </div>
+              <div class="control-group">
+                <label for="cylinder-length">Gjatesia e Cilindrit (L):</label>
+                <input
+                  type="range"
+                  id="cylinder-length"
+                  min="50"
+                  max="150"
+                  step="10"
+                  value="100"
+                />
+                <span id="cylinder-length-value">100</span>
+              </div>
+            </div>
+            <div id="exp2-controls" class="hidden">
+              <div class="control-group">
+                <label for="cube-size">Madhesia e Kubit (a):</label>
+                <input
+                  type="range"
+                  id="cube-size"
+                  min="30"
+                  max="80"
+                  step="10"
+                  value="50"
+                />
+                <span id="cube-size-value">50</span>
+              </div>
+            </div>
+            <button id="start-btn" class="action-btn">
+              Fillo Eksperimentin
+            </button>
+            <button id="pause-btn" class="action-btn" disabled>Ndalo</button>
+            <button id="reset-btn" class="action-btn">Rivendos</button>
+            <button id="back-btn" class="action-btn">Kthehu ne Zgjedhje</button>
+          </div>
+          <div id="guide-panel">
+            <h3>Udhezuesi</h3>
+            <div id="exp1-guide" class="hidden">
+              <p>
+                Ky eksperiment tregon nje cilinder druri qe lekundet ne leng.
+              </p>
+              <p>- Rregulloni parametrat duke perdorur panelin e kontrollit</p>
+              <p>- Shtypni 'Fillo' per te nisur simulimin</p>
+              <p>- Vezhgoni lekundjen dhe modelin e vales</p>
+            </div>
+            <div id="exp2-guide" class="hidden">
+              <p>Ky eksperiment tregon dy blloqe kubike qe lekunden ne uje.</p>
+              <p>- Rregulloni madhesine e kubit duke perdorur rreshqitesin</p>
+              <p>- Shtypni 'Fillo' per te nisur simulimin</p>
+              <p>- Vezhgoni se si lekunden blloqet</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="simulation-area"></div>
+
+        <div id="wave-container">
+          <h3>Vala e Lekundjes</h3>
+          <div id="wave-display"></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
